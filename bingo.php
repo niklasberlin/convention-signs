@@ -28,6 +28,7 @@
  * @group pdf
  */
 
+
 $font = "dejavusans";
 
 // set style for barcode
@@ -40,19 +41,6 @@ $style = array(
     'module_width' => 1, // width of a single module in points
     'module_height' => 1 // height of a single module in points
 );
-
-function map($value, $fromLow, $fromHigh, $toLow, $toHigh) {
-    $fromRange = $fromHigh - $fromLow;
-    $toRange = $toHigh - $toLow;
-    $scaleFactor = $toRange / $fromRange;
-
-    // Re-zero the value within the from range
-    $tmpValue = $value - $fromLow;
-    // Rescale the value to the to range
-    $tmpValue *= $scaleFactor;
-    // Re-zero back to the to range
-    return $tmpValue + $toLow;
-}
 
 $qr_code_width = 150;
 
@@ -118,7 +106,8 @@ $entries = [];
 foreach ($rows as $line){
     $line = array_combine($headers, $line);
     if($line["approved"]=="yes"){
-        $entries[] = filter_var($line["Your Word/Phrase:"],FILTER_SANITIZE_STRING);
+        $entries[] = htmlspecialchars($line["Your Word/Phrase:"]);
+        //$entries[] = filter_var($line["Your Word/Phrase:"],FILTER_SANITIZE_STRING);
         //print($line["Your Word/Phrase:"]."<br/>");
     }
 }

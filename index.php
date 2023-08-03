@@ -85,6 +85,7 @@
             </div>
             <div class="container mt-3 border border-secondary p-3">
                 <h3>Bingo Cards for Badgecontrol</h3>
+                <h5>add more words <a href="https://docs.google.com/forms/d/e/1FAIpQLSebjsWBtnxcs1FbAsXC1Ftr0E5tWHJZr-aEuaoXS_Rgj_5rYg/viewform">here</a></h5>
                 <form action="bingo.php" method="get">
                 <div class="form-group">
                 <label for="number">Number of cards:</label>

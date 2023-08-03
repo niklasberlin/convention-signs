@@ -13,6 +13,7 @@ class EJCPDF extends TCPDF{
         if($orientation == "P"){
             //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
+                $this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
                 $this->Image('img/ornament_2.jpg', 20, 210, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
                 $this->Image('img/ornament_1.jpg', 150, 200, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
             }
