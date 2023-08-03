@@ -211,8 +211,11 @@ function createBingo($pdf_handle, $game_entries){
     }
 }
 
-$number = filter_var($_GET['number'],FILTER_SANITIZE_NUMBER_INT);
-
+if (isset($_GET['number'])){
+    $number = filter_var($_GET['number'],FILTER_SANITIZE_NUMBER_INT);
+}else{
+    $number = 1;
+}
 foreach (range(1,$number) as $page){
     createBingo($pdf, $entries);    
 }
