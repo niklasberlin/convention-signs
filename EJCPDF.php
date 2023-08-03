@@ -3,7 +3,7 @@
 require_once('tcpdf/tcpdf.php');
 
 class EJCPDF extends TCPDF{
-    public function AddPage($orientation='', $format='', $keepmargins=false, $tocpage=false){
+    public function AddPage($orientation='P', $format='', $keepmargins=false, $tocpage=false, $showOrnaments = true){
         parent::AddPage($orientation, $format, $keepmargins, $tocpage);
         $this->SetMargins(0, 0, 0, true);
         $this->SetFooterMargin(0);
@@ -11,15 +11,18 @@ class EJCPDF extends TCPDF{
         $this->SetAutoPageBreak(TRUE, 0);
         $this->setTextShadow(array('enabled'=>false, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
         if($orientation == "P"){
-            $this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
-            $this->Image('img/ornament_2.jpg', 20, 210, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
-            $this->Image('img/ornament_1.jpg', 150, 200, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+            //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+            if($showOrnaments){
+                $this->Image('img/ornament_2.jpg', 20, 210, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                $this->Image('img/ornament_1.jpg', 150, 200, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+            }
             //$this->Image('img/banner.jpg', 20, 210, $this->getPageWidth(), 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
         }elseif($orientation == "L"){
             $this->Image('img/bg-L.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
-            $this->Image('img/ornament_2.jpg', 30, 40, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
-            $this->Image('img/ornament_1.jpg', 240, 130, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
-
+            if($showOrnaments){
+                $this->Image('img/ornament_2.jpg', 30, 40, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                $this->Image('img/ornament_1.jpg', 240, 130, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+            }
         }
         $this->SetXY(10, $this->getPageHeight()-6);
         $this->setFont("dejavusans", '', 7, '', true);
@@ -27,6 +30,7 @@ class EJCPDF extends TCPDF{
         $this->cell(0, 0, "generated at ".date('d.m.Y - H:i'), 0, 1, 'L', 0, '', 0);
         $this->SetXY(0,35);
         $this->SetTextColor(0,0,0);
+        $this->SetLineWidth(0.5);
     }
 
     public function setMyDefaults($title="", $keywords="", $font="dejavusans"){

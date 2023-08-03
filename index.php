@@ -83,6 +83,18 @@
                 </div>
                 </form>
             </div>
+            <div class="container mt-3 border border-secondary p-3">
+                <h3>Bingo Cards for Badgecontrol</h3>
+                <form action="bingo.php" method="get">
+                <div class="form-group">
+                <label for="number">Number of cards:</label>
+                <input type="text" name="number" value="1" class="form-control">
+                </div>
+                <div class="form-group mt-3">
+                <input type="submit" name="generate" value="generate Bingo card(s)" class="btn btn-primary">
+                </div>
+                </form>
+            </div>
         </div>
     
 
