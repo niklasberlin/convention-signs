@@ -13,10 +13,11 @@ class EJCPDF extends TCPDF{
         if($orientation == "P"){
             //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
-                $this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->Image('img/ejc24/logo.png', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
                 $this->setPageMark(); //needed to display cell border for bingo on top of background image
-                $this->Image('img/ornament_2.jpg', 20, 210, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
-                $this->Image('img/ornament_1.jpg', 150, 200, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                //$this->Image('img/ornament_2.jpg', 20, 210, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                //$this->Image('img/ornament_1.jpg', 150, 200, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
             }
             //$this->Image('img/banner.jpg', 20, 210, $this->getPageWidth(), 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
         }elseif($orientation == "L"){

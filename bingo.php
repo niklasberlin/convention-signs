@@ -129,7 +129,7 @@ function createBingo($pdf_handle, $game_entries){
     
     // Add a page
     // This method has several options, check the source code documentation for more information.
-    $pdf_handle->AddPage("P", showOrnaments:false);
+    $pdf_handle->AddPage("P", showOrnaments:true);
 
     $fontsize = 72;
     $lineheigh = $fontsize+6;
