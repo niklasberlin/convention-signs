@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>EJC 2023 PDF Generator</title>
+        <title>EJC 2024 PDF Generator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="">
@@ -18,7 +18,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container d-flex h-100 p-3 mx-auto flex-column">
-            <h2>EJC 2023 PDF generator</h2>
+            <h2>EJC 2024 PDF generator</h2>
             <div class="container mt-3 border border-secondary p-3">
                 <h3>Website QR-Code Signs</h3>
                 <form action="website.php" method="get">
@@ -78,8 +78,14 @@
                   <input class="form-check-input" type="radio" name="orientation" id="inlineRadio2" value="L">
                   <label class="form-check-label" for="inlineRadio2">Landscape</label>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="logo_visibility" value="hidden" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Hide Logo
+                  </label>
+                </div>
                 <div class="form-group mt-3">
-                <input type="submit" name="generate" value="generate generic sign" class="btn btn-primary">
+                    <input type="submit" name="generate" value="generate generic sign" class="btn btn-primary">
                 </div>
                 </form>
             </div>

@@ -76,8 +76,18 @@ if (isset($_GET['orientation'])){
 	$orientation = filter_var($_GET['orientation'],FILTER_SANITIZE_STRING);
 }
 
+if (isset($_GET['logo_visibility']) && $_GET['logo_visibility']=="hidden"){
+	$show_logo = false;
+}else{
+    $show_logo = true;
+}
+
 if($orientation != "L" && $orientation != "P"){
-	$direction = "P";
+	$orientation = "P";
+}
+
+if($orientation=="P"){
+    $show_logo = false; //always hide the lofo if we are in Portrait mode, Logo will be placed during page creation
 }
 
 $title = filter_var($text, FILTER_SANITIZE_STRING);
@@ -99,12 +109,18 @@ $lineheigh = $fontsize+6;
 $targetwidth = $pdf->getPageWidth();
 $offset=0;
 $rotation=-1;
+$logo_size = 70;
+$logo_x = 30;
+$logo_y_offset = 130; 
 
 if($direction==0){
     if($orientation == "L"){
-        $offset=20;
+        $offset=70;
+        $logo_size = 80;
+        $logo_x = ($targetwidth-$logo_size)/2;
+        $logo_y_offset = 100; 
     }else{
-        $offset=60;
+        $offset=80;
     }
 }elseif($direction==1){
     $offset = 160;
@@ -142,6 +158,10 @@ $pdf->setFont($font, '', $fontsize, '', true);
 //$pdf->Cell(0, 0, $text, 0, 1, 'C', 0, '', 0);
 $pdf->Multicell(0,$pdf->getPageHeight()-$offset,$text,0,'C',0,1,'','',true,0,false, true, $pdf->getPageHeight()-$offset, 'M');
 
+//add EJC24 Logo
+if($show_logo){
+    $pdf->Image('img/ejc24/logo.jpg', $logo_x, $pdf->getPageHeight()-$logo_y_offset, $logo_size, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+}
 if($rotation>=0){
     $rotation = map($rotation-90,0,360,0,2*pi());
     //add direction arrow

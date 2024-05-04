@@ -13,7 +13,17 @@ class EJCPDF extends TCPDF{
         if($orientation == "P"){
             //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
-                $this->Image('img/ejc24/logo.png', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->Image('img/ejc24/logo.jpg', 10, 10, 35, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+
+                //rotate following image
+                // Start Transformation
+                $this->StartTransform();
+                $this->Rotate(-35, 170, 255);
+                $this->Image('img/ejc24/elem1.jpg', 170, 255, 30, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->StopTransform();
+
+                $this->Image('img/ejc24/elem2.jpg', 20, 260, 30, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->Image('img/ejc24/elem3.jpg', 170, 10, 20, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
                 //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
                 $this->setPageMark(); //needed to display cell border for bingo on top of background image
                 //$this->Image('img/ornament_2.jpg', 20, 210, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
@@ -21,11 +31,22 @@ class EJCPDF extends TCPDF{
             }
             //$this->Image('img/banner.jpg', 20, 210, $this->getPageWidth(), 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
         }elseif($orientation == "L"){
-            $this->Image('img/bg-L.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+            //$this->Image('img/bg-L.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
-                $this->Image('img/ornament_2.jpg', 30, 40, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
-                $this->Image('img/ornament_1.jpg', 240, 130, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                //$this->Image('img/ornament_2.jpg', 30, 40, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                //$this->Image('img/ornament_1.jpg', 240, 130, 40, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
+                $this->StartTransform();
+                $img_x = 20;
+                $img_y = 170;
+                $img_size = 30;
+                $this->Rotate(200, $img_x+$img_size/2, $img_y+$img_size/2);
+                $this->Image('img/ejc24/elem1.jpg', $img_x, $img_y, $img_size, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->StopTransform();
+
+                $this->Image('img/ejc24/elem2.jpg', 240, 150, 30, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->Image('img/ejc24/elem3.jpg', 0, 10, 20, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             }
+            $this->setPageMark();
         }
         $this->SetXY(10, $this->getPageHeight()-6);
         $this->setFont("dejavusans", '', 7, '', true);
