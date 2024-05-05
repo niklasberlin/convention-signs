@@ -203,6 +203,7 @@ function createBingo($pdf_handle, $game_entries, $form_url){
     $qr_code_x = ($pdf_handle->getPageWidth()-$qr_code_size)/2;
     $qr_code_y = $y + $bingo_size + 0;
     //add QR Code for Input Form
+    $pdf_handle->setFont($font, '', $fontsize/8, '', true);
     $pdf_handle->write2DBarcode($form_url, 'QRCODE,M', $qr_code_x, $qr_code_y, $qr_code_size, $qr_code_size, $style, 'N');
     $pdf_handle->Multicell(0,$qr_code_y+$qr_code_size,$form_url,0,'C',0,1,'','',true,0,false, true, 0, 'M');
 }
