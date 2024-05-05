@@ -28,21 +28,10 @@
  * @group pdf
  */
 
+$form_url = "https://docs.google.com/forms/d/e/1FAIpQLSebjsWBtnxcs1FbAsXC1Ftr0E5tWHJZr-aEuaoXS_Rgj_5rYg/viewform";
+
 
 $font = "dejavusans";
-
-// set style for barcode
-$style = array(
-    'border' => 0,
-    'vpadding' => 'auto',
-    'hpadding' => 'auto',
-    'fgcolor' => array(0,0,0),
-    'bgcolor' => false, //array(255,255,255)
-    'module_width' => 1, // width of a single module in points
-    'module_height' => 1 // height of a single module in points
-);
-
-$qr_code_width = 150;
 
 $title = "Convention BINGO!";
 
@@ -118,7 +107,7 @@ $pdf = new EJCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8'
 
 $pdf->setMyDefaults("Convention BINGO!","EJC, Bingo, Volunteering");
 
-function createBingo($pdf_handle, $game_entries){
+function createBingo($pdf_handle, $game_entries, $form_url){
     global $font;
     if (count($game_entries)<25){
         print "not enought entries for Bingo Card! Currently only ".count($entries)." valid entries";
@@ -138,7 +127,7 @@ function createBingo($pdf_handle, $game_entries){
     $rotation=-1;
 
     $bingo_padding = 30;
-    $bingo_offset = 80;
+    $bingo_offset = 60;
 
     $bingo_size = ($targetwidth-$bingo_padding)/5;
 
@@ -198,6 +187,24 @@ function createBingo($pdf_handle, $game_entries){
         //#MultiCell(w, h, txt, border = 0, align = 'J', fill = 0, ln = 1, x = '', y = '', reseth = true, stretch = 0, ishtml = false, autopadding = true, maxh = 0)
         $counter++;
     }
+
+    // set style for barcode
+    $style = array(
+        'border' => 0,
+        'vpadding' => 'auto',
+        'hpadding' => 'auto',
+        'fgcolor' => array(0,0,0),
+        'bgcolor' => false, //array(255,255,255)
+        'module_width' => 1, // width of a single module in points
+        'module_height' => 1 // height of a single module in points
+    );
+
+    $qr_code_size = 45;
+    $qr_code_x = ($pdf_handle->getPageWidth()-$qr_code_size)/2;
+    $qr_code_y = $y + $bingo_size + 0;
+    //add QR Code for Input Form
+    $pdf_handle->write2DBarcode($form_url, 'QRCODE,M', $qr_code_x, $qr_code_y, $qr_code_size, $qr_code_size, $style, 'N');
+    $pdf_handle->Multicell(0,$qr_code_y+$qr_code_size,$form_url,0,'C',0,1,'','',true,0,false, true, 0, 'M');
 }
 
 if (isset($_GET['number'])){
@@ -206,7 +213,7 @@ if (isset($_GET['number'])){
     $number = 1;
 }
 foreach (range(1,$number) as $page){
-    createBingo($pdf, $entries);    
+    createBingo($pdf, $entries, $form_url);    
 }
 
 //if($rotation>=0){
