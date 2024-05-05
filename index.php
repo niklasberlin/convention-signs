@@ -81,7 +81,7 @@
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="logo_visibility" value="hidden" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
-                    Hide Logo
+                    Hide Logo (in Landscape Mode)
                   </label>
                 </div>
                 <div class="form-group mt-3">
