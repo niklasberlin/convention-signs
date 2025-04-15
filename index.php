@@ -26,13 +26,13 @@
                 <input type="text" name="url" class="form-control">
                 </div>
                 <div class="form-group">
-                <label for="url">Titel:</label>
+                <label for="url">Title:</label>
                 <input type="text" name="title" class="form-control">
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
-                    Hide Backgroundgraphic
+                    Hide Background Graphic
                   </label>
                 </div>
                 <div class="form-check">
@@ -60,7 +60,7 @@
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
-                    Hide Backgroundgraphic
+                    Hide Background Graphic
                   </label>
                 </div>
                 <div class="form-check">
@@ -85,14 +85,14 @@
                 <label for="direction">direction:</label>
                 <select name="direction" id="dir" class="form-control">
                   <option value="0">None</option>
-                  <option value="1">Front</option>
-                  <option value="2">Front Right</option>
+                  <option value="1">Up</option>
+                  <option value="2">Up Right</option>
                   <option value="3">Right</option>
-                  <option value="4">Back Right</option>
-                  <option value="5">Back</option>
-                  <option value="6">Back Left</option>
+                  <option value="4">Down Right</option>
+                  <option value="5">Down</option>
+                  <option value="6">Down Left</option>
                   <option value="7">Left</option>
-                  <option value="8">Front Left</option>
+                  <option value="8">Up Left</option>
                 </select>
                 </div>
                 <div class="form-check form-check-inline">
@@ -112,7 +112,7 @@
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
-                    Hide Backgroundgraphic
+                    Hide Background Graphic
                   </label>
                 </div>
                 <div class="form-check">
