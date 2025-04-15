@@ -102,7 +102,7 @@
                 </div>
                 <div class="form-check form-check">
                   <input class="form-check-input" type="radio" name="orientation" id="inlineRadio2" value="L">
-                  <label class="form-check-label" for="inlineRadio2">Landscape</label>
+                  <label class="form-check-label" for="inlineRadio2">Landscape (no Aichtal Design available)</label>
                 </div>
                 <!--<div class="form-check">
                   <input class="form-check-input" type="checkbox" name="logo_visibility" value="hidden" id="flexCheckDefault">
