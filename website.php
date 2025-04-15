@@ -87,6 +87,7 @@ $pdf->AddPage("P");
 $pdf->setFont($font, '', 36, '', true);
 if($design_color){
     $pdf->SetTextColor(154, 54, 3);
+    $style['fgcolor']=array(154, 54, 3);
 }else{
     $pdf->SetTextColor(0,0,0);
 }
