@@ -3,7 +3,7 @@
 require_once('tcpdf/tcpdf.php');
 
 class EJCPDF extends TCPDF{
-    public function AddPage($orientation='P', $format='', $keepmargins=false, $tocpage=false, $showOrnaments = true){
+    public function AddPage($orientation='P', $format='', $keepmargins=false, $tocpage=false, $showOrnaments = true, $show_bg = true){
         parent::AddPage($orientation, $format, $keepmargins, $tocpage);
         $this->SetMargins(0, 0, 0, true);
         $this->SetFooterMargin(0);
@@ -11,7 +11,9 @@ class EJCPDF extends TCPDF{
         $this->SetAutoPageBreak(TRUE, 0);
         $this->setTextShadow(array('enabled'=>false, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
         if($orientation == "P"){
-            $this->Image('img/aichtal/Briefpapier-aichtal2025.png', 0, 0, $this->getPageWidth(), 0, '', '', '', true, 300, '', false, false, 0, false, false, false);
+            if($show_bg){
+                $this->Image('img/aichtal/Briefpapier-aichtal2025.png', 0, 0, $this->getPageWidth(), 0, '', '', '', true, 300, '', false, false, 0, false, false, false);
+            }
             if($showOrnaments){
                 //$this->Image('img/ejc24/logo.jpg', 10, 10, 35, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
 

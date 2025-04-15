@@ -78,10 +78,16 @@
                   <input class="form-check-input" type="radio" name="orientation" id="inlineRadio2" value="L">
                   <label class="form-check-label" for="inlineRadio2">Landscape</label>
                 </div>
-                <div class="form-check">
+                <!--<div class="form-check">
                   <input class="form-check-input" type="checkbox" name="logo_visibility" value="hidden" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
                     Hide Logo (in Landscape Mode)
+                  </label>
+                </div>-->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Hide Backgroundgraphic
                   </label>
                 </div>
                 <div class="form-group mt-3">

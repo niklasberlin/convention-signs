@@ -82,6 +82,14 @@ if (isset($_GET['logo_visibility']) && $_GET['logo_visibility']=="hidden"){
     $show_logo = true;
 }
 
+//bg_visibility
+if (isset($_GET['bg_visibility']) && $_GET['bg_visibility']=="hidden"){
+	$show_bg = false;
+}else{
+    $show_bg = true;
+}
+
+
 if($orientation != "L" && $orientation != "P"){
 	$orientation = "P";
 }
@@ -102,7 +110,7 @@ $pdf->setMyDefaults($text,"EJC, Signs, directions");
 
 // Add a page
 // This method has several options, check the source code documentation for more information.
-$pdf->AddPage($orientation);
+$pdf->AddPage($orientation, '', false, false, false, $show_bg);
 
 $fontsize = 72;
 $lineheigh = $fontsize+6;
