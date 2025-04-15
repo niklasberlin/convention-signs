@@ -11,7 +11,7 @@ class EJCPDF extends TCPDF{
         $this->SetAutoPageBreak(TRUE, 0);
         $this->setTextShadow(array('enabled'=>false, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
         if($orientation == "P"){
-            //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+            $this->Image('img/aichtal/Briefpapier-aichtal2025.png', 0, 0, $this->getPageWidth(), 0, '', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
                 //$this->Image('img/ejc24/logo.jpg', 10, 10, 35, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
 
