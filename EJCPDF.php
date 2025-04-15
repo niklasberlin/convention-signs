@@ -13,7 +13,7 @@ class EJCPDF extends TCPDF{
         if($orientation == "P"){
             //$this->Image('img/bg.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
-                $this->Image('img/ejc24/logo.jpg', 10, 10, 35, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+                //$this->Image('img/ejc24/logo.jpg', 10, 10, 35, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
 
                 //rotate following image
                 // Start Transformation
