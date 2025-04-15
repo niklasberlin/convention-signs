@@ -89,6 +89,13 @@ if (isset($_GET['bg_visibility']) && $_GET['bg_visibility']=="hidden"){
     $show_bg = true;
 }
 
+//bg_visibility
+if (isset($_GET['design_color']) && $_GET['design_color']=="black"){
+	$design_color = false;
+}else{
+    $design_color = true;
+}
+
 
 if($orientation != "L" && $orientation != "P"){
 	$orientation = "P";
@@ -162,6 +169,11 @@ if($direction>0 && $direction <= 8 && $orientation =="L"){
 
 $pdf->setXY(0,0);
 $pdf->setFont($font, '', $fontsize, '', true);
+if($design_color){
+    $pdf->SetTextColor(154, 54, 3);
+}else{
+    $pdf->SetTextColor(0,0,0);
+}
 //$nlines = $pdf->SplitLines($text,$targetwidth);
 //$pdf->Cell(0, 0, $text, 0, 1, 'C', 0, '', 0);
 $pdf->Multicell(0,$pdf->getPageHeight()-$offset,$text,0,'C',0,1,'','',true,0,false, true, $pdf->getPageHeight()-$offset, 'M');

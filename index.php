@@ -30,6 +30,12 @@
                 <label for="url">Titel:</label>
                 <input type="text" name="title" class="form-control">
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Use Black as Textcolor instead of Design Color
+                  </label>
+                </div>
                 <input type="submit" name="generate!" value="generate Website QR-Code" class="btn btn-primary">
 
                 </form>
@@ -44,6 +50,12 @@
                 <div class="form-group">
                 <label for="pass">password:</label>
                 <input type="text" name="pass" class="form-control">
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Use Black as Textcolor instead of Design Color
+                  </label>
                 </div>
                 <input type="submit" name="generate" value="generate Wifi QR-Code" class="btn btn-primary">
 
@@ -88,6 +100,12 @@
                   <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
                     Hide Backgroundgraphic
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Use Black as Textcolor instead of Design Color
                   </label>
                 </div>
                 <div class="form-group mt-3">

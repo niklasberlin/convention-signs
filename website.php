@@ -64,6 +64,12 @@ if (!filter_var($website, FILTER_VALIDATE_URL)) {
 	exit;
 }
 
+if (isset($_GET['design_color']) && $_GET['design_color']=="black"){
+	$design_color = false;
+}else{
+    $design_color = true;
+}
+
 $title = filter_var($title, FILTER_SANITIZE_STRING);
 
 // Include the main TCPDF library (search for installation path).
@@ -79,6 +85,11 @@ $pdf->setMyDefaults('QR: '.$title,'QR-Code, EJC');
 $pdf->AddPage("P");
 
 $pdf->setFont($font, '', 36, '', true);
+if($design_color){
+    $pdf->SetTextColor(154, 54, 3);
+}else{
+    $pdf->SetTextColor(0,0,0);
+}
 $pdf->Cell(0, 0, $title, 0, 1, 'C', 0, '', 0);
 
 // QRCODE,M : QR-CODE Medium error correction
