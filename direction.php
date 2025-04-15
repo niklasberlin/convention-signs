@@ -180,7 +180,7 @@ $pdf->Multicell(0,$pdf->getPageHeight()-$offset,$text,0,'C',0,1,'','',true,0,fal
 
 //add EJC24 Logo
 if($show_logo){
-    $pdf->Image('img/ejc24/logo.jpg', $logo_x, $pdf->getPageHeight()-$logo_y_offset, $logo_size, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
+    //$pdf->Image('img/ejc24/logo.jpg', $logo_x, $pdf->getPageHeight()-$logo_y_offset, $logo_size, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
 }
 if($rotation>=0){
     $rotation = map($rotation-90,0,360,0,2*pi());
