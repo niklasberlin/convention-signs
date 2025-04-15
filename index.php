@@ -31,13 +31,20 @@
                 <input type="text" name="title" class="form-control">
                 </div>
                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Hide Backgroundgraphic
+                  </label>
+                </div>
+                <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
                     Use Black as Textcolor instead of Design Color
                   </label>
                 </div>
-                <input type="submit" name="generate!" value="generate Website QR-Code" class="btn btn-primary">
-
+                <div class="form-group mt-3">
+                  <input type="submit" name="generate!" value="generate Website QR-Code" class="btn btn-primary">
+                </div>
                 </form>
             </div>
             <div class="container mt-3 border border-secondary p-3">
@@ -52,13 +59,20 @@
                 <input type="text" name="pass" class="form-control">
                 </div>
                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Hide Backgroundgraphic
+                  </label>
+                </div>
+                <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
                     Use Black as Textcolor instead of Design Color
                   </label>
                 </div>
-                <input type="submit" name="generate" value="generate Wifi QR-Code" class="btn btn-primary">
-
+                <div class="form-group mt-3">
+                  <input type="submit" name="generate" value="generate Wifi QR-Code" class="btn btn-primary">
+                </div>
                 </form>
             </div>
             <div class="container mt-3 border border-secondary p-3">
@@ -113,7 +127,7 @@
                 </div>
                 </form>
             </div>
-            <div class="container mt-3 border border-secondary p-3">
+            <!--<div class="container mt-3 border border-secondary p-3">
                 <h3>Bingo Cards for Badgecontrol</h3>
                 <h5>add more words <a href="https://docs.google.com/forms/d/e/1FAIpQLSebjsWBtnxcs1FbAsXC1Ftr0E5tWHJZr-aEuaoXS_Rgj_5rYg/viewform">here</a></h5>
                 <form action="bingo.php" method="get">
@@ -125,7 +139,7 @@
                 <input type="submit" name="generate" value="generate Bingo card(s)" class="btn btn-primary">
                 </div>
                 </form>
-            </div>
+            </div>-->
         </div>
     
 

@@ -55,6 +55,13 @@ if (isset($_GET['ssid'])){
 	$ssid = filter_var($_GET['ssid'],FILTER_SANITIZE_STRING);
 }
 
+//bg_visibility
+if (isset($_GET['bg_visibility']) && $_GET['bg_visibility']=="hidden"){
+	$show_bg = false;
+}else{
+    $show_bg = true;
+}
+
 if (isset($_GET['design_color']) && $_GET['design_color']=="black"){
 	$design_color = false;
 }else{
@@ -73,7 +80,7 @@ require_once('EJCPDF.php');
 $pdf = new EJCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 $pdf->setMyDefaults('QR: '.$title,'QR-Code, EJC');
-$pdf->AddPage("P");
+$pdf->AddPage("P", '', false, false, false, $show_bg);
 
 $pdf->setFont($font, '', 36, '', true);
 if($design_color){

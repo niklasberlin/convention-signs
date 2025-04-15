@@ -64,6 +64,13 @@ if (!filter_var($website, FILTER_VALIDATE_URL)) {
 	exit;
 }
 
+//bg_visibility
+if (isset($_GET['bg_visibility']) && $_GET['bg_visibility']=="hidden"){
+	$show_bg = false;
+}else{
+    $show_bg = true;
+}
+
 if (isset($_GET['design_color']) && $_GET['design_color']=="black"){
 	$design_color = false;
 }else{
@@ -82,7 +89,7 @@ $pdf->setMyDefaults('QR: '.$title,'QR-Code, EJC');
 
 // Add a page
 // This method has several options, check the source code documentation for more information.
-$pdf->AddPage("P");
+$pdf->AddPage("P", '', false, false, false, $show_bg);
 
 $pdf->setFont($font, '', 36, '', true);
 if($design_color){
