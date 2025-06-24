@@ -93,7 +93,7 @@ $pdf->setMyDefaults('QR: '.$title,'QR-Code, EJC');
 
 // Add a page
 // This method has several options, check the source code documentation for more information.
-$pdf->AddPage("P", '', false, false, false, $show_bg);
+$pdf->AddPage("P", '', false, false, true, $show_bg);
 
 $pdf->setFont($headlinefont, '', 36, '', true);
 if($design_color){

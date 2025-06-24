@@ -170,7 +170,7 @@ if($direction>0 && $direction <= 8 && $orientation =="L"){
 $pdf->setXY(0,0);
 $pdf->setFont($font, '', $fontsize, '', true);
 if($design_color){
-    $pdf->SetTextColor(154, 54, 3);
+    $pdf->SetTextColor(255, 80, 0);
 }else{
     $pdf->SetTextColor(0,0,0);
 }
@@ -195,8 +195,8 @@ if($rotation>=0){
     }
     $pdf->SetLineStyle(array('width' => 5, 'join' => 'round'));
     if($design_color){
-        $pdf->SetLineStyle(array('color' => array(154, 54, 3)));
-        $pdf->SetFillColor(154,54,3);
+        $pdf->SetLineStyle(array('color' => array(255, 80, 0)));
+        $pdf->SetFillColor(255,80,0);
     }else{
         $pdf->SetLineStyle(array('color' => array(0, 0, 0)));
         $pdf->SetFillColor(0,0,0);

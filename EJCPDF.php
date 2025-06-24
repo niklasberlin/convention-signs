@@ -12,15 +12,21 @@ class EJCPDF extends TCPDF{
         $this->setTextShadow(array('enabled'=>false, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
         if($orientation == "P"){
             if($show_bg){
-                $this->Image('img/aichtal/Briefpapier-aichtal2025.png', 0, 0, $this->getPageWidth(), 0, '', '', '', true, 300, '', false, false, 0, false, false, false);
+                $this->Image('img/ejc25/BG_P.png', 0, 0, $this->getPageWidth(), 0, '', '', '', true, 300, '', false, false, 0, false, false, false);
             }
-            if($showOrnaments){
-                //$this->Image('img/ejc24/logo.jpg', 10, 10, 35, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
-
+            if($showOrnaments){               
                 //rotate following image
                 // Start Transformation
                 //$this->StartTransform();
-                //$this->Rotate(-35, 170, 255);
+                //$this->Rotate(-20, 150, 300);
+                //$this->Image(
+                //    'img/ejc25/ejc.png', // File path
+                //    58,                  // X position
+                //    10,                  // Y position
+                //    50,                  // Width in mm (height auto-scaled if not set)
+                //    0,                   // Height (0 = auto)
+                //    'PNG'                // Image type
+                //);
                 //$this->Image('img/ejc24/elem1.jpg', 170, 255, 30, 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
                 //$this->StopTransform();
 
@@ -33,6 +39,9 @@ class EJCPDF extends TCPDF{
             $this->setPageMark(); //needed to display cell border for bingo on top of background image
             //$this->Image('img/banner.jpg', 20, 210, $this->getPageWidth(), 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
         }elseif($orientation == "L"){
+            if($show_bg){
+                $this->Image('img/ejc25/BG_L.png', 0, 0, $this->getPageWidth(), 0, '', '', '', true, 300, '', false, false, 0, false, false, false);
+            }
             //$this->Image('img/bg-L.jpg', 0, 0, $this->getPageWidth(), 0, 'JPG', '', '', true, 300, '', false, false, 0, false, false, false);
             if($showOrnaments){
                 //$this->Image('img/ornament_2.jpg', 30, 40, 30, 0, 'JPG', '', '', true, 150, '', false, false, 0, false, false, false);
