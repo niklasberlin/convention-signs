@@ -106,7 +106,7 @@ class EJCPDF extends TCPDF{
         $this->setFontSubsetting(true);
 
 
-        $fontname = $pdf->addTTFfont('/fonts/The Beatrix.ttf', 'TrueTypeUnicode', '', 32);
+        $fontname = $pdf->addTTFfont('/fonts/The_Beatrix.ttf', 'TrueTypeUnicode', '', 32);
         // Set font
         // dejavusans is a UTF-8 Unicode font, if you only need to
         // print standard ASCII chars, you can use core fonts like
