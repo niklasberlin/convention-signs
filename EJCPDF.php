@@ -111,7 +111,7 @@ class EJCPDF extends TCPDF{
         // dejavusans is a UTF-8 Unicode font, if you only need to
         // print standard ASCII chars, you can use core fonts like
         // helvetica or times to reduce file size.
-        $this->setFont($fontname, '', 14, '', true);
+        $this->setFont("The Beatrix", '', 14, '', true);
     }
 
 }
