@@ -28,7 +28,9 @@
  * @group pdf
  */
 
-$font = "dejavusans";
+//$headlinefont = "The_Beatrix";
+
+//$textfont = "The_Beatrix";
 
 // set style for barcode
 $style = array(
@@ -84,6 +86,8 @@ require_once('EJCPDF.php');
 
 // create new PDF document
 $pdf = new EJCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+$headlinefont = TCPDF_FONTS::addTTFfont('fonts/The_Beatrix.ttf', 'TrueTypeUnicode', '', 96);
+$textfont = TCPDF_FONTS::addTTFfont('fonts/Poppins-Bold.ttf', 'TrueTypeUnicode', '', 96);
 
 $pdf->setMyDefaults('QR: '.$title,'QR-Code, EJC');
 
@@ -91,10 +95,10 @@ $pdf->setMyDefaults('QR: '.$title,'QR-Code, EJC');
 // This method has several options, check the source code documentation for more information.
 $pdf->AddPage("P", '', false, false, false, $show_bg);
 
-$pdf->setFont($font, '', 36, '', true);
+$pdf->setFont($headlinefont, '', 36, '', true);
 if($design_color){
-    $pdf->SetTextColor(154, 54, 3);
-    $style['fgcolor']=array(154, 54, 3);
+    $pdf->SetTextColor(255, 80, 0);
+    $style['fgcolor']=array(255, 80, 0);
 }else{
     $pdf->SetTextColor(0,0,0);
 }
@@ -105,7 +109,7 @@ $pdf->Cell(0, 0, $title, 0, 1, 'C', 0, '', 0);
 $left = ($pdf->getPageWidth() - $qr_code_width)/2;
 $pdf->write2DBarcode($website, 'QRCODE,M', $left, 50, $qr_code_width, $qr_code_width, $style, 'N');
 
-$pdf->setFont($font, '', 18, '', true);
+$pdf->setFont($textfont, '', 18, '', false);
 
 $pdf->cell(0, 0, $website, 0, 1, 'C', 0, '', 0);
 

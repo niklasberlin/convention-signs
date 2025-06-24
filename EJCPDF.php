@@ -60,6 +60,7 @@ class EJCPDF extends TCPDF{
     }
 
     public function setMyDefaults($title="", $keywords="", $font="dejavusans"){
+        $headlinefont = TCPDF_FONTS::addTTFfont('fonts/The_Beatrix.ttf', 'TrueTypeUnicode', '', 96);
         // set document information
         $this->setCreator(PDF_CREATOR);
         $this->setAuthor('Niklas Aumüller');
@@ -106,12 +107,11 @@ class EJCPDF extends TCPDF{
         $this->setFontSubsetting(true);
 
 
-        $fontname = $pdf->addTTFfont('/fonts/The_Beatrix.ttf', 'TrueTypeUnicode', '', 32);
         // Set font
         // dejavusans is a UTF-8 Unicode font, if you only need to
         // print standard ASCII chars, you can use core fonts like
         // helvetica or times to reduce file size.
-        $this->setFont("The Beatrix", '', 14, '', true);
+        $this->setFont($headlinefont, '', 14, '', true);
     }
 
 }
