@@ -30,14 +30,14 @@
                 <input type="text" name="title" class="form-control">
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="HideBackgroundWebsite">
+                  <label class="form-check-label" for="HideBackgroundWebsite">
                     Hide Background Graphic
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="TextcolorWebsite">
+                  <label class="form-check-label" for="TextcolorWebsite">
                     Use Black as Textcolor instead of Design Color
                   </label>
                 </div>
@@ -58,14 +58,14 @@
                 <input type="text" name="pass" class="form-control">
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="HideBackgroundWifi">
+                  <label class="form-check-label" for="HideBackgroundWifi">
                     Hide Background Graphic
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="TextcolorWifi">
+                  <label class="form-check-label" for="TextcolorWifi">
                     Use Black as Textcolor instead of Design Color
                   </label>
                 </div>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-check form-check">
                   <input class="form-check-input" type="radio" name="orientation" id="inlineRadio2" value="L">
-                  <label class="form-check-label" for="inlineRadio2">Landscape (no Aichtal Design available)</label>
+                  <label class="form-check-label" for="inlineRadio2">Landscape</label>
                 </div>
                 <!--<div class="form-check">
                   <input class="form-check-input" type="checkbox" name="logo_visibility" value="hidden" id="flexCheckDefault">
@@ -110,14 +110,14 @@
                   </label>
                 </div>-->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" name="bg_visibility" value="hidden" id="HideBackgroundDirection">
+                  <label class="form-check-label" for="HideBackgroundDirection">
                     Hide Background Graphic
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" name="design_color" value="black" id="TextcolorDirection">
+                  <label class="form-check-label" for="TextcolorDirection">
                     Use Black as Textcolor instead of Design Color
                   </label>
                 </div>
