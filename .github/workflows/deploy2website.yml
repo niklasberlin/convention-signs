@@ -14,6 +14,7 @@ jobs:
         server: ${{ vars.webspace_server }}
         username: ${{ vars.webspace_user }}
         password: ${{ secrets.webspace_password }}
+        protocol: ftps
         exclude: |
           **/.git*
           **/.git*/**
