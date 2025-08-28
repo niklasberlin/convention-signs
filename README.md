@@ -1,4 +1,4 @@
 # convention-signs
-small webbased tool to generate signs for juggling conventions. Build for the EJC2023 in Lublin
+small webbased tool to generate signs for juggling conventions.
 
 PDF generation in based on the tcpdf library https://tcpdf.org/
